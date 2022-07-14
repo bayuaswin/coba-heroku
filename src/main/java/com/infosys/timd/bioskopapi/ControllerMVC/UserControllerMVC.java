@@ -55,7 +55,7 @@ public class UserControllerMVC {
     public String showFormForUpdate(@PathVariable (value = "usersId") Long usersId, Model model ){
         User user = userServiceImplements.getUserId(usersId);
         model.addAttribute("user", user);
-        return "/editUser";
+        return "editUser";
     }
 
     @GetMapping("/delete/{usersId}")
@@ -91,6 +91,6 @@ public class UserControllerMVC {
         }else {
             List<User> list = userServiceImplements.getAll();
             model.addAttribute("list", list);}
-        return "/usersPage";
+        return "usersPage";
     }
 }

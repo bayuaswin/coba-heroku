@@ -67,7 +67,7 @@
                 src="/styles/cssandjs/images/default-monochrome.svg"
                 alt="Logo"
                 width="140px"
-                height="40px"
+                height="140px"
         />
     </div>
     <div class="pt-2 d-flex flex-column gap-5">
@@ -135,30 +135,30 @@
             </div>
 
             <form th:action="@{/search}" method="post" class="form-inline mb-3">
-            <div class="d-flex align-items-center justify-content-end gap-4">
-                <input
-                        type="text"
-                        name="name"
-                        placeholder="Search Schedule"
-                        class="search form-control"
-                        th:value="${name}"
-                />
-                <button
-                        class="btn btn-search d-flex justify-content-center align-items-center p-0"
-                        type="submit"
-                >
-                    <img
-                            src="/styles/cssandjs/images/ic_search.svg"
-                            width="20px"
-                            height="20px"
+                <div class="d-flex align-items-center justify-content-end gap-4">
+                    <input
+                            type="text"
+                            name="name"
+                            placeholder="Search Schedule"
+                            class="search form-control"
+                            th:value="${name}"
                     />
-                </button>
-                <img
-                        src="/styles/cssandjs/images/avatar.jpg"
-                        alt="Photo Profile"
-                        class="avatar"
-                />
-            </div>
+                    <button
+                            class="btn btn-search d-flex justify-content-center align-items-center p-0"
+                            type="submit"
+                    >
+                        <img
+                                src="/styles/cssandjs/images/ic_search.svg"
+                                width="20px"
+                                height="20px"
+                        />
+                    </button>
+                    <img
+                            src="/styles/cssandjs/images/avatar.jpg"
+                            alt="Photo Profile"
+                            class="avatar"
+                    />
+                </div>
             </form>
         </div>
     </nav>
@@ -289,9 +289,9 @@
                     <!--                    Start Pagination-->
                     <div th:if ="${totalPages > 1}">
                         <div class="row col-sm-10">
-                                                        <div class="col-sm-2">
-                                                            <span>Total Rows: [[${totalItems}]]</span>
-                                                        </div>
+                            <div class="col-sm-2">
+                                <span>Total Rows: [[${totalItems}]]</span>
+                            </div>
                             <div class="col-sm-2">
                     <span th:each ="i: ${#numbers.sequence(1, totalPages)}">
                         <a th:if="${currentPage != i}" th:href="@{'/page/schedule/' + ${i}}">[[${i}]]</a>
@@ -303,7 +303,7 @@
                                 <span th:unless="${currentPage < totalPages}">Next</span>
                             </div>
                             <div class="col-sm-1">
-                                <a th:if="${currentPage < totalPages}" th:href="@{'/page/schedule/' + ${currentPage}}">Last</a>
+                                <a th:if="${currentPage < totalPages}" th:href="@{'/page/schedule/' + ${totalPages}}">Last</a>
                                 <span th:unless="${currentPage < totalPages}">Last</span>
                             </div>
                         </div>
